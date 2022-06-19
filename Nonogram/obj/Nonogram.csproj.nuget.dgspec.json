@@ -1,29 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\xampp\\htdocs\\Nonogram\\Nonogram\\Nonogram.csproj": {}
+    "C:\\Users\\maart\\source\\repos\\Nonogram\\Nonogram\\Nonogram.csproj": {}
   },
   "projects": {
-    "C:\\xampp\\htdocs\\Nonogram\\Nonogram\\Nonogram.csproj": {
+    "C:\\Users\\maart\\source\\repos\\Nonogram\\Nonogram\\Nonogram.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\xampp\\htdocs\\Nonogram\\Nonogram\\Nonogram.csproj",
+        "projectUniqueName": "C:\\Users\\maart\\source\\repos\\Nonogram\\Nonogram\\Nonogram.csproj",
         "projectName": "Nonogram",
-        "projectPath": "C:\\xampp\\htdocs\\Nonogram\\Nonogram\\Nonogram.csproj",
-        "packagesPath": "C:\\Users\\RAfif\\.nuget\\packages\\",
-        "outputPath": "C:\\xampp\\htdocs\\Nonogram\\Nonogram\\obj\\",
+        "projectPath": "C:\\Users\\maart\\source\\repos\\Nonogram\\Nonogram\\Nonogram.csproj",
+        "packagesPath": "C:\\Users\\maart\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maart\\source\\repos\\Nonogram\\Nonogram\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\RAfif\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maart\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "uap10.0.17763"

@@ -1,66 +1,77 @@
 {
   "format": 1,
   "restore": {
-    "C:\\xampp\\htdocs\\Nonogram\\NonogramModels\\NonogramModels.csproj": {}
+    "C:\\Users\\maart\\source\\repos\\Nonogram\\NonogramModels\\NonogramModels.csproj": {}
   },
   "projects": {
-    "C:\\xampp\\htdocs\\Nonogram\\NonogramModels\\NonogramModels.csproj": {
+    "C:\\Users\\maart\\source\\repos\\Nonogram\\NonogramModels\\NonogramModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\xampp\\htdocs\\Nonogram\\NonogramModels\\NonogramModels.csproj",
+        "projectUniqueName": "C:\\Users\\maart\\source\\repos\\Nonogram\\NonogramModels\\NonogramModels.csproj",
         "projectName": "NonogramModels",
-        "projectPath": "C:\\xampp\\htdocs\\Nonogram\\NonogramModels\\NonogramModels.csproj",
-        "packagesPath": "C:\\Users\\RAfif\\.nuget\\packages\\",
-        "outputPath": "C:\\xampp\\htdocs\\Nonogram\\NonogramModels\\obj\\",
+        "projectPath": "C:\\Users\\maart\\source\\repos\\Nonogram\\NonogramModels\\NonogramModels.csproj",
+        "packagesPath": "C:\\Users\\maart\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maart\\source\\repos\\Nonogram\\NonogramModels\\obj\\",
         "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\RAfif\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maart\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "uap10.0.17763"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "uap10.0.17763": {
             "projectReferences": {}
           }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
+        "uap10.0.17763": {
+          "dependencies": {
+            "Microsoft.NETCore.UniversalWindowsPlatform": {
+              "target": "Package",
+              "version": "[6.2.13, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "win10-arm": {
+          "#import": []
+        },
+        "win10-arm-aot": {
+          "#import": []
+        },
+        "win10-arm64-aot": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
+        },
+        "win10-x64-aot": {
+          "#import": []
+        },
+        "win10-x86": {
+          "#import": []
+        },
+        "win10-x86-aot": {
+          "#import": []
         }
       }
     }

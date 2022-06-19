@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NonogramModels
 {
-    internal class Puzzle
+    public class SolvingPuzzle
     {
     }
 }
