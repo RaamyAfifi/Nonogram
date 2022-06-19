@@ -8,5 +8,8 @@ namespace NonogramModels
 {
     public class CreatedPuzzle
     {
+        public Puzzle Puzzle { get; set; }
+        public string Creator { get; set; }
+        public string Description { get; set; }
     }
 }
