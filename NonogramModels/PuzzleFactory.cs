@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NonogramModels
 {
-    public class Cell
+    public class PuzzleFactory
     {
     }
 }
