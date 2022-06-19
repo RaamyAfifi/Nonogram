@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Nonogram.ViewModels
 {
-    internal class OverviewPageViewModel
+    public class OverviewPageViewModel
     {
     }
 }

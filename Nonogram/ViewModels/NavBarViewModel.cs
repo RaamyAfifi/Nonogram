@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Nonogram.ViewModels
 {
-    internal class NavBarViewModel
+    public class NavBarViewModel
     {
     }
 }
