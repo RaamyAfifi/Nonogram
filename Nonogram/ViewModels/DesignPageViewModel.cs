@@ -13,7 +13,7 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace Nonogram.ViewModels
 {
-    public class DesignPageViewModel
+    public class DesignPageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -21,12 +21,16 @@ namespace Nonogram.ViewModels
 
         private ObservableCollection<Color> blackColors = new ObservableCollection<Color>();
         private ObservableCollection<Color> whiteColors = new ObservableCollection<Color>();
+
         public Color SelectedBlackColor { get; set; } = Colors.Black;
         public Color SelectedWhiteColor { get; set; } = Colors.White;
+        public Color SelectedColorPicker { get; set; } = Colors.SkyBlue;
 
         public ICommand FinishedCommand { get; set; }
         public ICommand ColorBlackCellCommand { get; set; }
         public ICommand ColorWhiteCellCommand { get; set; }
+        public ICommand AddBlackColorCommand { get; set; }
+        public ICommand AddWhiteColorCommand { get; set; }
 
         public DesignPageViewModel(CreatedPuzzle puzzle)
         {
@@ -55,7 +59,12 @@ namespace Nonogram.ViewModels
                 cell.IsColored = false;
                 cell.RGBA = SelectedWhiteColor;
             });
+
+            AddBlackColorCommand = new RelayCommand(addBlackColor);
+
+            AddWhiteColorCommand = new RelayCommand(addWhiteColor);
         }
+
         private async void FinishAndSavePuzzle()
         {
             await PuzzleFactory.SavePuzzle(designingPuzzle);
@@ -80,6 +89,18 @@ namespace Nonogram.ViewModels
                 blackColors = value;
                 NotifyPropertyChanged();
             }
+        }
+
+        private void addWhiteColor()
+        {
+            if (WhiteColors.Contains(SelectedColorPicker)) return;
+            WhiteColors.Add(SelectedColorPicker);
+        }
+
+        private void addBlackColor()
+        {
+            if (BlackColors.Contains(SelectedColorPicker)) return;
+            BlackColors.Add(SelectedColorPicker);
         }
 
         public ObservableCollection<Color> WhiteColors

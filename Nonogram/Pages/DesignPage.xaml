@@ -2,7 +2,7 @@
     x:Class="Nonogram.Pages.DesignPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Nonogram.Pages"
+    xmlns:pages="using:Nonogram.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity" xmlns:core="using:Microsoft.Xaml.Interactions.Core"
@@ -19,13 +19,17 @@
             <ColumnDefinition Width="600"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <local:NavBar Grid.ColumnSpan="2"/>
+        <pages:NavBar Grid.ColumnSpan="2"/>
         <Grid Grid.Row="1" VerticalAlignment="Stretch" RowSpacing="20">
             <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Grid HorizontalAlignment="Center" Grid.Row="0">
+            <StackPanel Height="300" Width="300">
+                <ColorPicker Color="{Binding SelectedColorPicker, Mode=TwoWay}"></ColorPicker>
+            </StackPanel>
+            <Grid HorizontalAlignment="Center" Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
@@ -54,6 +58,9 @@
                             </ItemsPanelTemplate>
                         </GridView.ItemsPanel>
                     </GridView>
+                    <Button Background="#1497A1" HorizontalAlignment="Center" Command="{Binding AddBlackColorCommand}" Foreground="White">
+                        <TextBlock Text="Add Color" FontSize="18"/>
+                    </Button>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Grid.Row="0">
                     <StackPanel Background="White" HorizontalAlignment="Stretch">
@@ -75,6 +82,9 @@
                             </ItemsPanelTemplate>
                         </GridView.ItemsPanel>
                     </GridView>
+                    <Button Background="#1497A1" HorizontalAlignment="Center" Command="{Binding AddWhiteColorCommand}" Foreground="White">
+                        <TextBlock Text="Add Color" FontSize="18"/>
+                    </Button>
                 </StackPanel>
             </Grid>
             <Button Background="#1497A1" MinWidth="200" Grid.Row="2" HorizontalAlignment="Center" Command="{Binding FinishedCommand}" Foreground="White">
