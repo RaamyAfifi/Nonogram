@@ -25,7 +25,7 @@ namespace Nonogram.ViewModels
         public static void GotoAllPuzzles()
         {
             Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigate(typeof(OverViewPage));
+            rootFrame.Navigate(typeof(OverviewPage));
         }
 
         public static void GotoCreatePuzzle()
