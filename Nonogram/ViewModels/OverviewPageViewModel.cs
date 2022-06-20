@@ -2,23 +2,18 @@
 using Newtonsoft.Json;
 using Nonogram.Pages;
 using NonogramModels;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 namespace Nonogram.ViewModels
 {
-    public class OverviewPageViewModel
+    public class OverviewPageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
         private List<CreatedPuzzle> savedPuzzles = new List<CreatedPuzzle>();
         public CreatedPuzzle SelectedPuzzle { get; set; }
 
@@ -30,14 +25,6 @@ namespace Nonogram.ViewModels
             StartPuzzleCommand = new RelayCommand(startPuzzle);
         }
 
-        /// <summary>
-        /// gets all saved puzzles in the json file
-        /// </summary>
-        private async void loadPuzzles()
-        {
-            SavedPuzzles = await PuzzleFactory.GetSavedPuzzles();
-        }
-
         public List<CreatedPuzzle> SavedPuzzles
         {
             get => savedPuzzles;
@@ -46,6 +33,14 @@ namespace Nonogram.ViewModels
                 savedPuzzles = value;
                 NotifyPropertyChanged();
             }
+        }
+
+        /// <summary>
+        /// gets all saved puzzles in the json file
+        /// </summary>
+        private async void loadPuzzles()
+        {
+            SavedPuzzles = await PuzzleFactory.GetSavedPuzzles();
         }
 
         private void startPuzzle()

@@ -15,7 +15,7 @@ using Nonogram.Pages;
 
 namespace Nonogram.ViewModels
 {
-    public class CreatePageViewModel
+    public class CreatePageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private CreatedPuzzle newPuzzle = new CreatedPuzzle("", "");
