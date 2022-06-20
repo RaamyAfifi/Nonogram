@@ -22,6 +22,7 @@ namespace Nonogram.Pages
         public NavBar()
         {
             this.InitializeComponent();
+            DataContext = new NavBar();
         }
     }
 }

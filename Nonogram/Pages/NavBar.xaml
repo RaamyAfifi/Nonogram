@@ -8,7 +8,8 @@
     xmlns:viewModels="using:Nonogram.ViewModels"
     mc:Ignorable="d"
     d:DesignHeight="300"
-    d:DesignWidth="400">
+    d:DesignWidth="400"
+    d:DataContext="{d:DesignInstance Type=viewModels:NavBarViewModel}">
 
     <Grid HorizontalAlignment="Stretch" Background="#007162" BorderBrush="White" BorderThickness="2">
         <Grid.ColumnDefinitions>
@@ -16,11 +17,11 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="0" Width="180" Margin="10 0 0 0" Background="Transparent" Foreground="White">
+        <Button Grid.Column="0" Width="180" Margin="10 0 0 0" Background="Transparent" Foreground="White" Command="{Binding AllPuzzleCommand}">
             <TextBlock Text="All puzzles" FontSize="26"/>
         </Button>
         <TextBlock Grid.Column="1" Margin="10,10,10,10" TextWrapping="Wrap" Text="NONOGRAM" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-        <Button Grid.Column="2" Width="180" HorizontalAlignment="Right" Margin="0 0 10 0" Background="Transparent" Foreground="White">
+        <Button Grid.Column="2" Width="180" HorizontalAlignment="Right" Margin="0 0 10 0" Background="Transparent" Foreground="White" Command="{Binding CreatePuzzleCommand}">
             <TextBlock Text="Create puzzle" FontSize="26"/>
         </Button>
     </Grid>
