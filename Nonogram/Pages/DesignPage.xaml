@@ -5,7 +5,10 @@
     xmlns:local="using:Nonogram.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity" xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:viewModels="using:Nonogram.ViewModels"
     mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance Type=viewModels:DesignPageViewModel}"
     Background="#01173E">
     <Grid HorizontalAlignment="Stretch">
         <Grid.RowDefinitions>
@@ -104,6 +107,17 @@
                                             <SolidColorBrush Color="{Binding RGBA}"/>
                                         </Button.Background>
                                         <TextBlock Visibility="{Binding IsColored}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="White" FontWeight="Bold">*</TextBlock>
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="ContextRequested">
+                                                <core:InvokeCommandAction Command="{Binding ElementName=DesigningPuzzle, Path=DataContext.ColorWhiteCellCommand}" CommandParameter="{Binding}" />
+                                            </core:EventTriggerBehavior>
+                                            <core:EventTriggerBehavior EventName="DragStarted">
+                                                <core:InvokeCommandAction Command="{Binding ElementName=DesigningPuzzle, Path=DataContext.ColorBlackCellCommand}" CommandParameter="{Binding}" />
+                                            </core:EventTriggerBehavior>
+                                            <core:EventTriggerBehavior EventName="Click">
+                                                <core:InvokeCommandAction Command="{Binding ElementName=DesigningPuzzle, Path=DataContext.ColorBlackCellCommand}" CommandParameter="{Binding}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
                                     </Button>
                                 </DataTemplate>
                             </ListView.ItemTemplate>

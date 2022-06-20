@@ -43,6 +43,23 @@ namespace Nonogram.ViewModels
             BlackColors.Add(Colors.Red);
             BlackColors.Add(Colors.Green);
             BlackColors.Add(Colors.Blue);
+
+            FinishedCommand = new RelayCommand(FinishAndSavePuzzle);
+
+            ColorBlackCellCommand = new RelayCommand<Cell>(cell => {
+                cell.IsColored = true;
+                cell.RGBA = SelectedBlackColor;
+            });
+
+            ColorWhiteCellCommand = new RelayCommand<Cell>(cell => {
+                cell.IsColored = false;
+                cell.RGBA = SelectedWhiteColor;
+            });
+        }
+        private async void FinishAndSavePuzzle()
+        {
+            await PuzzleFactory.SavePuzzle(designingPuzzle);
+            NavBarViewModel.GotoAllPuzzles();
         }
 
         public CreatedPuzzle DesigningPuzzle

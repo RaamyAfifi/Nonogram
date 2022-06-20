@@ -56,7 +56,7 @@
                 </GridView.ItemsPanel>
             </GridView>
             <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top">
-                <Button Background="#1497A1" Width="200" HorizontalAlignment="Center" Foreground="White">
+                <Button Background="#1497A1" Width="200" HorizontalAlignment="Center" Foreground="White" Command="{Binding StartPuzzleCommand}">
                     <TextBlock Text="Start Puzzle" FontSize="26" FontWeight="Bold"/>
                 </Button>
             </StackPanel>

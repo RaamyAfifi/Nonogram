@@ -1,4 +1,7 @@
-﻿using NonogramModels;
+﻿using Microsoft.Toolkit.Mvvm.Input;
+using Newtonsoft.Json;
+using Nonogram.Pages;
+using NonogramModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +10,8 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 namespace Nonogram.ViewModels
 {
@@ -22,6 +27,7 @@ namespace Nonogram.ViewModels
         public OverviewPageViewModel()
         {
             loadPuzzles();
+            StartPuzzleCommand = new RelayCommand(startPuzzle);
         }
 
         /// <summary>
@@ -40,6 +46,13 @@ namespace Nonogram.ViewModels
                 savedPuzzles = value;
                 NotifyPropertyChanged();
             }
+        }
+
+        private void startPuzzle()
+        {
+            if (SelectedPuzzle == null) return;
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(SolvePage), JsonConvert.SerializeObject(SelectedPuzzle));
         }
 
         /// <summary>
