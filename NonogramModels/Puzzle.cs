@@ -21,6 +21,9 @@ namespace NonogramModels
             InitPuzzle();
         }
 
+        /// <summary>
+        /// This methode is used for initializing the puzzle. i = Xaxis(column) and j the Yaxis(row).
+        /// </summary>
         private void InitPuzzle()
         {
             for (int i = 0; i < YAxis; i++)
@@ -32,6 +35,13 @@ namespace NonogramModels
                 }
             }
         }
+
+        /// <summary>
+        /// This methode is for getting the solution of a puzzle which the user is trying to solve.
+        /// </summary>
+        /// <returns>
+        /// the solution is a list of booleans.
+        /// </returns>
 
         public List<bool> GetBlackAndWhiteSolution()
         {

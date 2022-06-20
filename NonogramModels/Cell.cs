@@ -19,6 +19,10 @@ namespace NonogramModels
         private Color rgba = Colors.White;
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// NotifyPropertyChanged() is needed for updating the color. Without it, the system won't know
+        /// that the color has changed during the run time.
+        /// </summary>
         public Color RGBA
         {
             get => rgba;
@@ -28,7 +32,10 @@ namespace NonogramModels
                 NotifyPropertyChanged();
             }
         }
-
+        /// <summary>
+        /// NotifyPropertyChanged() is needed for updating the cell. Without it, the system won't know
+        /// that the cell has changed during the run time.
+        /// </summary>
         public bool IsCrossed
         {
             get => isCrossed;
@@ -39,6 +46,10 @@ namespace NonogramModels
             }
         }
 
+        /// <summary>
+        /// NotifyPropertyChanged() is needed for updating the cell. Without it, the system won't know
+        /// that the cell has changed during the run time.
+        /// </summary>
         public bool IsColored
         {
             get => isColored;
