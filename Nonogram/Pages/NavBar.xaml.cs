@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Nonogram.ViewModels;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -22,7 +23,7 @@ namespace Nonogram.Pages
         public NavBar()
         {
             this.InitializeComponent();
-            DataContext = new NavBar();
+            DataContext = new NavBarViewModel();
         }
     }
 }
