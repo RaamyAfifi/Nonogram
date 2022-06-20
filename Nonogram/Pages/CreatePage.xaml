@@ -5,8 +5,10 @@
     xmlns:local="using:Nonogram.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:Nonogram.ViewModels"
     mc:Ignorable="d"
-    Background="#01173E">
+    Background="#01173E"
+    d:DataContext="{d:DesignInstance Type=viewModels:CreatePageViewModel}">
     <Grid HorizontalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
@@ -17,8 +19,48 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <local:NavBar Grid.ColumnSpan="2"/>
-        <Grid Grid.Row="1" Grid.ColumnSpan="2">
-
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" Width="400" VerticalAlignment="Center">
+            <Grid.Background>
+                <SolidColorBrush Opacity=".5" Color="Black"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Background="Black" Padding="0,10" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                <TextBlock Text="Puzzle settings" Foreground="White" FontSize="21" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+            <Grid Grid.Row="1" Grid.ColumnSpan="2" Padding="20" Grid.RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock FontWeight="Bold" Text="Creator" VerticalAlignment="Center"/>
+                <TextBox  Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding NewPuzzle.Creator, Mode=TwoWay}" Background="White" Foreground="Black"/>
+                <TextBlock Grid.Row="1" FontWeight="Bold" Text="Description" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="2" Grid.ColumnSpan="4" Text="{Binding NewPuzzle.Description, Mode=TwoWay}" Background="White" Foreground="Black"/>
+                <TextBlock FontWeight="Bold" Grid.Row="3" Grid.Column="1" Text="Xas" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="2" Grid.Row="3" Text="{Binding Xas, Mode=TwoWay}" Background="White" Foreground="Black"/>
+                <TextBlock FontWeight="Bold" Grid.Column="1" Grid.Row="4" Text="Yas" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Yas, Mode=TwoWay}" Background="White" Foreground="Black"/>
+                <Button Width="175" Background="#1497A1" Grid.Row="5" Grid.ColumnSpan="4" HorizontalAlignment="Center" Command="{Binding CreateCommand}" Foreground="White">
+                    <TextBlock Text="Done" FontSize="26" FontWeight="Bold"/>
+                </Button>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

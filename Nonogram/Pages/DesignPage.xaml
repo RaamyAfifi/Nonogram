@@ -17,8 +17,105 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <local:NavBar Grid.ColumnSpan="2"/>
-        <Grid Grid.Row="1" Grid.ColumnSpan="2">
-
+        <Grid Grid.Row="1" VerticalAlignment="Stretch" RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid HorizontalAlignment="Center" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Grid.Row="0">
+                    <StackPanel Background="Black" HorizontalAlignment="Stretch">
+                        <TextBlock Text="Black" Foreground="White" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <GridView SelectionMode="Single" ItemsSource="{Binding BlackColors, Mode=TwoWay}" SelectedItem="{Binding SelectedBlackColor, Mode=TwoWay}">
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Width="30" Height="30">
+                                    <StackPanel.Background>
+                                        <SolidColorBrush Color="{Binding }"></SolidColorBrush>
+                                    </StackPanel.Background>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                        <GridView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsWrapGrid Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </GridView.ItemsPanel>
+                    </GridView>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="0">
+                    <StackPanel Background="White" HorizontalAlignment="Stretch">
+                        <TextBlock Text="White" Foreground="Black" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <GridView HorizontalAlignment="Center" SelectionMode="Single" MaxWidth="400" ItemsSource="{Binding WhiteColors, Mode=TwoWay}" SelectedItem="{Binding SelectedWhiteColor ,Mode=TwoWay}">
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Width="30" Height="30">
+                                    <StackPanel.Background>
+                                        <SolidColorBrush Color="{Binding }"></SolidColorBrush>
+                                    </StackPanel.Background>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                        <GridView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsWrapGrid Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </GridView.ItemsPanel>
+                    </GridView>
+                </StackPanel>
+            </Grid>
+            <Button Background="#1497A1" MinWidth="200" Grid.Row="2" HorizontalAlignment="Center" Command="{Binding FinishedCommand}" Foreground="White">
+                <TextBlock Text="Finished" FontSize="26" FontWeight="Bold"/>
+            </Button>
         </Grid>
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ListView Name="DesigningPuzzle" ItemsSource="{Binding DesigningPuzzle.Puzzle.PuzzleSolution, Mode=TwoWay}" SelectionMode="None">
+                <ListView.ItemContainerStyle >
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Margin" Value="0"/>
+                        <Setter Property="Padding" Value="0,-5,0,-5"/>
+                        <Setter Property="MinHeight" Value="0"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ListView ItemsSource="{Binding}" SelectionMode="None">
+                            <ListView.ItemContainerStyle >
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="Margin" Value="0"/>
+                                    <Setter Property="Padding" Value="0"/>
+                                    <Setter Property="MinWidth" Value="20"/>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Button BorderBrush="Black" Width="30" Height="30" >
+                                        <Button.Background>
+                                            <SolidColorBrush Color="{Binding RGBA}"/>
+                                        </Button.Background>
+                                        <TextBlock Visibility="{Binding IsColored}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="White" FontWeight="Bold">*</TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <ItemsStackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                        </ListView>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
     </Grid>
 </Page>
