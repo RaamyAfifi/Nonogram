@@ -8,10 +8,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Nonogram")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("M. Arnoldus - R. Afifi")]
 [assembly: AssemblyProduct("Nonogram")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Student NHL Stenden")]
 [assembly: AssemblyCulture("")]
 
 // Version information for an assembly consists of the following four values:
